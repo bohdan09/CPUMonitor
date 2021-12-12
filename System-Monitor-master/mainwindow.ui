@@ -1,0 +1,2521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1400</width>
+    <height>750</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1400</width>
+    <height>900</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>System Monitor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../Desktop/system monitor/icon32.png</normaloff>../../Desktop/system monitor/icon32.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(26, 26, 26);</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(49, 49, 49);</string>
+   </property>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1401</width>
+      <height>711</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QTabBar::tab {
+  background: rgb(54, 54, 54);
+  color: rgb(149, 149, 149);
+  padding: 10px;
+	font: 12pt &quot;ГОСТ тип А&quot;;
+height:20px; 
+ width:140px;
+ }
+
+ QTabBar::tab:selected {
+  background: rgb(27, 77, 3);
+color: white;
+ height:20px;
+ width:140px;
+ }
+
+QTabWidget::pane { /* The tab widget frame */
+	border-color:  rgb(26, 26, 26);
+}
+
+</string>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideNone</enum>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="overview">
+     <attribute name="title">
+      <string>Overview</string>
+     </attribute>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>-20</y>
+        <width>21</width>
+        <height>761</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="upTimeLabel">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>10</y>
+        <width>491</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="motherBoardNameTempLabel">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>40</y>
+        <width>631</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cpuNameTempLabel">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>70</y>
+        <width>611</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="GPUNameTempLabel">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>100</y>
+        <width>541</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="RAMNameLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>RAM:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="storageNameTempLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Storage:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="networkContrlLabel">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>250</y>
+        <width>401</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="ramInfoComboBox">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>130</y>
+        <width>691</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox {
+	color: white;
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	background-color: rgb(63, 63, 63);
+	selection-background-color: rgb(63, 63, 63);
+}
+
+QComboBox:disabled{	
+	background-color: rgb(120,120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color:rgb(50, 163, 69);
+	border:none;
+}
+
+QComboBox QAbstractItemView
+{
+selection-background-color: green;
+color: rgb(72, 184, 41);
+font: 14pt;
+}</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="storageInfoComboBox">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>170</y>
+        <width>661</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox {
+	color: white;
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	background-color: rgb(63, 63, 63);
+	selection-background-color: rgb(63, 63, 63);
+}
+
+QComboBox:disabled{	
+	background-color: rgb(120,120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color:rgb(50, 163, 69);
+	border:none;
+}
+
+QComboBox QAbstractItemView
+{
+selection-background-color: green;
+color: rgb(72, 184, 41);
+font: 14pt;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Up Time:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Baseboard:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cpuNameTempLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>CPU:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="GPUNameTempLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Graphics card:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="audioLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Audio:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="networkContrlLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Network controller:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="audioDevicesComboBox">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>210</y>
+        <width>681</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox {
+	color: white;
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	background-color: rgb(63, 63, 63);
+	selection-background-color: rgb(63, 63, 63);
+}
+
+QComboBox:disabled{	
+	background-color: rgb(120,120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color:rgb(50, 163, 69);
+	border:none;
+}
+
+QComboBox QAbstractItemView
+{
+selection-background-color: green;
+color: rgb(72, 184, 41);
+font: 14pt;
+}</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="networkControllerComboBox">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>250</y>
+        <width>581</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox {
+	color: white;
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	background-color: rgb(63, 63, 63);
+	selection-background-color: rgb(63, 63, 63);
+}
+
+QComboBox:disabled{	
+	background-color: rgb(120,120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color:rgb(50, 163, 69);
+	border:none;
+}
+
+QComboBox QAbstractItemView
+{
+selection-background-color: green;
+color: rgb(72, 184, 41);
+font: 14pt;
+}</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="processList">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>330</y>
+        <width>441</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;ГОСТ тип А&quot;;
+color: rgb(214, 214, 214);
+background-color: rgb(54, 54, 54);
+border-color: rgb(255, 255, 255);
+border: none;</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="driversList">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>20</y>
+        <width>441</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;ГОСТ тип А&quot;;
+color: rgb(214, 214, 214);
+background-color: rgb(54, 54, 54);
+border-color: rgb(255, 255, 255);
+border: none;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="getProcessesButton">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>560</y>
+        <width>441</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#getProcessesButton {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#getProcessesButton:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Update processes list</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="getDriversButton">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>270</y>
+        <width>441</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#getDriversButton {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#getDriversButton:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Update drivers list</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="cpuProgressBar">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>600</y>
+        <width>301</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar {
+   
+	color: rgb(255, 255, 255);
+	font: 75 11pt &quot;Consolas&quot;;
+	border-color: rgb(59, 59, 59);
+    border-radius: 5px;
+}
+
+QProgressBar::chunk {
+    background-color: rgb(39, 99, 13);
+    width: 20px;
+}</string>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="textDirection">
+       <enum>QProgressBar::TopToBottom</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>600</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Total CPU Load</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>630</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Total RAM Load</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="ramProgressBar">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>630</y>
+        <width>301</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar {
+   
+	color: rgb(255, 255, 255);
+	font: 75 11pt &quot;Consolas&quot;;
+	border-color: rgb(59, 59, 59);
+    border-radius: 5px;
+}
+
+QProgressBar::chunk {
+    background-color: rgb(39, 99, 13);
+    width: 20px;
+}</string>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="amountOfProcesses">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>310</y>
+        <width>301</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 12pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Amount of processes:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="amountOfDrivers">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>0</y>
+        <width>301</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 12pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Amount of drivers:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cpuTemp_Label">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>70</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="gpuTemp_Label">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>100</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hddTemp_Label">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>180</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="chartButton_cpu">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>80</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#chartButton_cpu {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#chartButton_cpu:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Chart</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="chartButton_gpu">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>110</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#chartButton_gpu {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#chartButton_gpu:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Chart</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="chartButton_hdd">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>180</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#chartButton_hdd {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#chartButton_hdd:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Chart</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="maxLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>320</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 9pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Temp Max</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="minLabel">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>630</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(72, 184, 41);
+font: 9pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Temp Min</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="monitoringTools">
+     <attribute name="title">
+      <string>Monitoring tools</string>
+     </attribute>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>231</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Monitor processes(CPU Load)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="monitorCpuCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>20</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>50</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Acceptable CPU Load:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="acceptaleCpuLoadTxtBox">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>50</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: rgb(67, 67, 67);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+
+QLineEdit:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>80</y>
+        <width>201</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Do not apply for process:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>0</y>
+        <width>261</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Acceptable processes(CPU Load):</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="acceptableCpuProcessesList">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>20</y>
+        <width>381</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;ГОСТ тип А&quot;;
+color: rgb(214, 214, 214);
+background-color: rgb(63, 63, 63);
+selection-color: yellow;
+border: none;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cpuBrowseButton">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>80</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#cpuBrowseButton {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#cpuBrowseButton:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }
+
+QPushButton#cpuBrowseButton:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	border:none;
+}</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>50</y>
+        <width>16</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>120</y>
+        <width>231</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Monitor processes(RAM Load)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="monitorRamCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>120</y>
+        <width>16</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_26">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>190</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Acceptable RAM Load:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="acceptaleRamLoadTxtBox">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>190</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: rgb(67, 67, 67);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+
+QLineEdit:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>190</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>KB</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_28">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>220</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Do not apply for process:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ramBrowseButton">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>220</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#ramBrowseButton {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#ramBrowseButton:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }
+
+QPushButton#ramBrowseButton:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	border:none;
+}</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="acceptableRamProcessesList">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>150</y>
+        <width>381</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;ГОСТ тип А&quot;;
+color: rgb(214, 214, 214);
+background-color: rgb(63, 63, 63);
+border: none;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>130</y>
+        <width>251</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Acceptable processes(RAM Load):</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>280</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Output type:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ramDeleteButton">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>220</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#ramDeleteButton {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#ramDeleteButton:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cpuDeleteButton">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>80</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#cpuDeleteButton {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#cpuDeleteButton:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="outputTypeComboBox">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>270</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox {
+	color: rgb(72, 184, 41);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	background-color: rgb(63, 63, 63);
+	selection-background-color: rgb(63, 63, 63);
+}
+
+QComboBox:disabled{	
+	background-color: rgb(120,120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color:rgb(50, 163, 69);
+	border:none;
+}
+
+QComboBox QAbstractItemView
+{
+selection-background-color: green;
+color: rgb(72, 184, 41);
+font: 14pt;
+}</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="applyButtonMt">
+      <property name="geometry">
+       <rect>
+        <x>1220</x>
+        <y>510</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#applyButtonMt {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#applyButtonMt:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Apply</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cpuIsMonitoringLabel">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>20</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Monitoring...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ramIsMonitoringLabel">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>180</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Monitoring...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>160</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Monitor by:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="monitoringTypeRam">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>150</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox {
+	color: rgb(72, 184, 41);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	background-color: rgb(63, 63, 63);
+}
+
+QComboBox:disabled{	
+	background-color: rgb(120,120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color:rgb(50, 163, 69);
+	border:none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hintButton">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>150</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#cpuBrowseButton {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#cpuBrowseButton:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hinthiddenLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>360</y>
+        <width>661</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="resetRAM">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>150</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#resetRAM {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#resetRAM:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="resetCPU">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>40</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#resetCPU {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#resetCPU:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hintResLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>460</y>
+        <width>531</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stopCPU">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>10</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#stopCPU {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#stopCPU:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Stop</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stopRAM">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>120</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#stopRAM {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#stopRAM:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }</string>
+      </property>
+      <property name="text">
+       <string>Stop</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>280</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Log name:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="logNameBox">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>280</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: rgb(67, 67, 67);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+
+QLineEdit:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hintButton_accProcRam">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>220</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#hintButton_accProcRam {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#hintButton_accProcRam:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }
+
+QPushButton#hintButton_accProcRam:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	border:none;
+}</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="hintButton_accProcCpu">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>80</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#hintButton_accProcCpu {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#hintButton_accProcCpu:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }
+
+QPushButton#hintButton_accProcCpu:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	border:none;
+}</string>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="monitoringToolsGlobal">
+     <property name="minimumSize">
+      <size>
+       <width>1001</width>
+       <height>0</height>
+      </size>
+     </property>
+     <attribute name="title">
+      <string>Monitoring Tools Global</string>
+     </attribute>
+     <widget class="QLabel" name="label_33">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Monitor CPU Load</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="monitorCpuCheckBox_mtg">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>20</y>
+        <width>21</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cpuIsMonitoringLabel_Mtg">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>20</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Monitoring...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_34">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>290</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Log name:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="logNameBox_Mtg">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>290</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: rgb(67, 67, 67);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+
+QLineEdit:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="outputTypeComboBox_Mtg">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>280</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(63, 63, 63);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_35">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>290</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Output type:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="applyButtonMtg">
+      <property name="geometry">
+       <rect>
+        <x>1240</x>
+        <y>520</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#applyButtonMtg {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#applyButtonMtg:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }
+
+QPushButton#applyButtonMtg:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	border:none;
+}</string>
+      </property>
+      <property name="text">
+       <string>Apply</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_36">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Monitor RAM Load</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="monitorRamCheckBox_mtg">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>120</y>
+        <width>21</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ramIsMonitoringLabel_Mtg">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>120</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Monitoring...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_37">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>50</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Acceptable CPU Load:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="acceptaleCpuLoadTxtBox_mtg">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>50</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: rgb(67, 67, 67);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+
+QLineEdit:disabled{	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_38">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>50</y>
+        <width>16</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_66">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>150</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Acceptable RAM Load:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="acceptaleRamLoadTxtBox_mtg">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>150</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: rgb(67, 67, 67);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+
+QLineEdit:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	color: rgb(72, 184, 41);
+	border:none;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_65">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>150</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>%</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="resetCPU_Mtg">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>40</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#resetCPU_Mtg {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#resetCPU_Mtg:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }
+
+QPushButton#resetCPU_Mtg:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	border:none;
+}</string>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stopCPU_Mtg">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>10</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#stopCPU_Mtg {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#stopCPU_Mtg:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }
+
+QPushButton#stopCPU_Mtg:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	border:none;
+}</string>
+      </property>
+      <property name="text">
+       <string>Stop</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stopRAM_Mtg">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>90</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#stopRAM_Mtg {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#stopRAM_Mtg:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }
+
+QPushButton#stopRAM_Mtg:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	border:none;
+}</string>
+      </property>
+      <property name="text">
+       <string>Stop</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="resetRAM_Mtg">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>120</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#resetRAM_Mtg {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#resetRAM_Mtg:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }
+
+QPushButton#resetRAM_Mtg:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	border:none;
+}</string>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hintResLabel_Mtg">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>380</y>
+        <width>531</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="arduinoTools">
+     <attribute name="title">
+      <string>External Display Tools</string>
+     </attribute>
+     <widget class="QPushButton" name="applyButtonExdt">
+      <property name="geometry">
+       <rect>
+        <x>1230</x>
+        <y>520</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton#applyButtonExdt {
+color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(72, 72, 72);
+
+border-style: none;
+     border-width: 1px;
+     border-radius: 5px;
+
+ }
+ QPushButton#applyButtonExdt:pressed {     
+	color: rgb(72, 184, 41);
+	background-color: rgb(57, 57, 57);
+ }
+
+QPushButton#applyButtonExdt:disabled{
+	
+	background-color: rgb(120, 120, 120);
+	font: 14pt &quot;ГОСТ тип А&quot;;
+	border:none;
+}</string>
+      </property>
+      <property name="text">
+       <string>Apply</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="mainParamComboBox">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>60</y>
+        <width>221</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 14pt &quot;ГОСТ тип А&quot;;
+background-color: rgb(63, 63, 63);</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="onScreenCpuTempCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>70</y>
+        <width>16</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="onScreenCpuLoadCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>100</y>
+        <width>16</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="onScreenRamLoadCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>140</y>
+        <width>16</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="onScreenGpuTempCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>180</y>
+        <width>16</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="onScreenUpTimeCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>260</y>
+        <width>16</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="onScreenStorageTempCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>220</y>
+        <width>16</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_39">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>20</y>
+        <width>121</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Put on screen</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_40">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>20</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Parameter</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>1001</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_41">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>70</y>
+        <width>131</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Main parameter:</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>200</width>
+        <height>228</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="cpuTempParam">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+         </property>
+         <property name="text">
+          <string>CPU Temperature</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="cpuLoadParam">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+         </property>
+         <property name="text">
+          <string>CPU Load</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="ramLoadParam">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+         </property>
+         <property name="text">
+          <string>RAM Load</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="gpuTempParam">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+         </property>
+         <property name="text">
+          <string>GPU Temperature</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="storageTempParam">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Storage Temperature</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="uptimeParam">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(214, 214, 214);
+font: 14pt &quot;ГОСТ тип А&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Up Time</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1400</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

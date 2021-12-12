@@ -1,0 +1,36 @@
+#ifndef GLOBALVARIABLES_H
+#define GLOBALVARIABLES_H
+
+const short ARRAY_SIZE_FOR_DRIVERS_NAME{1024};
+
+const short AMOUNT_OF_PHYSICAL_MEMORY_BARS{4};
+const short AMOUNT_OF_PHYSICAL_DISKS{4};
+const short AMOUNT_OF_AUDIO_DEVICES{4};
+const short AMOUNT_OF_NETWORK_CONTROLLERS{255};
+
+const short MAX_AMOUNT_OF_TEMPERATURE_PARAMETERS{6};
+const short INDEX_OF_FIRST_HDD{2};
+
+const short PACKAGE_SIZE{11};
+/*
+    PACKAGE SIZE:
+        *CPU LOAD,
+        *CPU TEMP,
+        *GPU TEMP,
+        *RAM LOAD,
+        *HDD1 TEMP,
+        *HDD2 TEMP,
+        *HDD3 TEMP,
+        *HDD4 TEMP,
+        *UPTIME HOURS
+        *UPTIME MINUTES
+        *UPTIME SECONDS
+*/
+
+enum TIME{
+    HOURS,
+    MINUTES,
+    SECONDS
+};
+
+#endif // GLOBALVARIABLES_H
